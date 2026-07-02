@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  gap: 0px;
+  margin: 0px;
+  font-family: "MedievalSharp", cursive;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
