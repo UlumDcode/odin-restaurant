@@ -1,5 +1,5 @@
 // src/layout.js
-import { createNavbar } from "./navbar.js";
+import { createNavbar } from "./modules/navbar.js";
 
 export function clearContent() {
   const content = document.querySelector("#content");
