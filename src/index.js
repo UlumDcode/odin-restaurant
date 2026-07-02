@@ -2,17 +2,25 @@ import "./assets/style.css";
 import { initializeLayout, clearContent } from "./layout.js";
 import { loadHome } from "./modules/home.js";
 
-// 1. Inisialisasi Layout (Termasuk membuat Navbar)
+const content = document.querySelector("#content");
+console.log("Content container:", content);
+
+// 1. Inisialisasi Layout
 initializeLayout();
 
-// 2. Tambahkan Event Listener ke Tombol Home
-// Catatan: Karena navbar dibuat secara dinamis di initializeLayout,
-// kita pastikan elemennya sudah ada di DOM sebelum memilihnya.
+// 2. Load Home secara otomatis saat aplikasi pertama kali dimuat
+if (content) {
+  loadHome(content);
+} else {
+  console.error("Content container not found!");
+}
+
+// 3. Tambahkan Event Listener ke Tombol Home
 const homeBtn = document.querySelector("#home");
 if (homeBtn) {
   homeBtn.addEventListener("click", () => {
-    clearContent(); // Bersihkan konten lama
-    loadHome();     // Muat konten home
+    clearContent(content); 
+    loadHome(content);
   });
 }
 
